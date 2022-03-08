@@ -12,7 +12,7 @@ Below you can see how this website should look and behave:
 
 ## Live Demo
 
-[Live Demo](https://sediqullahbadakhsh.github.io/leaderboard/)
+[Live Demo](https://sediqullahbadakhsh.github.io/js-group-capstone/)
 
 ## Setup
 
