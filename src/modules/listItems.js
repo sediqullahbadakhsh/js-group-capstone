@@ -1,3 +1,6 @@
+import  listLikes  from './listItems.js'; 
+import getAPI from './involvementAPI.js';
+
 // Fetching Data
 const fetchData = async () => {
   const response = await fetch(
@@ -8,13 +11,12 @@ const fetchData = async () => {
 };
 
 // List Items
-const listItems = async () => {
+export const listItems = async () => {
   const ul = document.querySelector('.recipes');
   const food = await fetchData();
   food.forEach((element) => {
     const li = document.createElement('li');
     li.className = 'recipe-item';
-    li.id = element.idMeal;
 
     const img = document.createElement('img');
     img.className = 'food-img';
@@ -27,27 +29,32 @@ const listItems = async () => {
 
     const div = document.createElement('div');
     div.className = 'likes';
+    div.id = element.idMeal;
 
     const heart = document.createElement('i');
-    heart.classList.add('far', 'fa-heart');
+    heart.classList.add('fas', 'fa-heart');
     heart.id = element.idMeal;
-    const small = document.createElement('small');
-    small.textContent = '5 likes';
 
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'comments';
     btn.innerText = 'Comments';
     btn.id = element.idMeal;
+    comments(btn);
 
     div.appendChild(heart);
-    div.appendChild(small);
     p.appendChild(div);
     li.appendChild(img);
     li.appendChild(p);
     li.appendChild(btn);
     ul.appendChild(li);
   });
+
+  const recipe = document.querySelectorAll('.recipe-item');
+  const counter = document.querySelector('.recipes-counter');
+  counter.innerText = `Recipes (${countRecipes(recipe)})`;
+
+  addLike();
 };
 
 export default listItems;
