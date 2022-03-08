@@ -1,5 +1,7 @@
-import  listLikes  from './listItems.js'; 
-import getAPI from './involvementAPI.js';
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+
+import { getAPI, postAPI } from './involvementAPI.js';
 
 // Fetching Data
 const fetchData = async () => {
