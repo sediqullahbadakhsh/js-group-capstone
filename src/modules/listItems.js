@@ -13,7 +13,7 @@ const fetchData = async () => {
 };
 
 // List Items
-export const listItems = async () => {
+const listItems = async () => {
   const ul = document.querySelector('.recipes');
   const food = await fetchData();
   food.forEach((element) => {
