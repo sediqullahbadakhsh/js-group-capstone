@@ -1,15 +1,5 @@
-import createComment from './createComment.js';
-import { getCommentsAPI } from './involvementAPI.js';
+import fetchSingleData from './fetchSingleData.js';
 
-// Fetch Single data API
-const fetchSingleData = async (id) => {
-  const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
-  );
-  const { meals } = await response.json();
-  return meals[0];
-};
-// get data individually
 const comments = (btn) => {
   const modal = document.getElementById('commentModal');
   const span = document.getElementsByClassName('close')[0];
@@ -17,8 +7,6 @@ const comments = (btn) => {
 
   btn.onclick = async () => {
     const data = await fetchSingleData(btn.id);
-    const allComments = await getCommentsAPI(btn.id);
-
     const {
       strMealThumb,
       strMeal,
@@ -80,40 +68,7 @@ const comments = (btn) => {
     <td><strong>Ingredient 14:</strong> ${strIngredient14}</td>
     </tr>
     </table>
-    <h2>Comments (2)</h2>
-    <div id="itemC"></div>
-    <form>
-          <h2>Add a Comment</h2>
-          <span id="message"></span>
-          <br />
-          <div class="pad-btm">
-            <input type="text" name="name" id="name" placeholder="Your Name" />
-          </div>
-          <div class="pad-btm">
-            <textarea
-              name="insight"
-              id="insight"
-              placeholder="Your Insight"
-              cols="30"
-              rows="5"
-            ></textarea>
-          </div>
-          <div class="pad-btm">
-            <input type="button" class="comments" id="commentBtn${btn.id}" value="Submit" />
-          </div>
-        </form>
     `;
-
-    const itemC = document.getElementById('itemC');
-    itemC.innerHTML = allComments
-      .map((e) => {
-        const { username, comment } = e;
-        return `<span>${e.creation_date} ${username}: ${comment}</span><br />`;
-      })
-      .join('<br />');
-
-    const createCommentBtn = document.getElementById(`commentBtn${btn.id}`);
-    createCommentBtn.addEventListener('click', (e) => createComment(e, btn));
   };
 
   span.onclick = () => {
