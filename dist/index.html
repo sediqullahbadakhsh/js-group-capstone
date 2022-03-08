@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Recipes App</title>
   <script defer src="bundle.js"></script></head>
   <body>
     <header>
@@ -21,8 +27,13 @@
       <ul class="recipes"></ul>
     </main>
     <footer class="footer">
-      <hr />
       <small>Copyright &#9400; 2022 build by Nizamuddin and Sediqullah</small>
     </footer>
+    <div id="commentModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalContent"></div>
+      </div>
+    </div>
   </body>
 </html>
