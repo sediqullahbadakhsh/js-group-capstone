@@ -2,9 +2,13 @@
 
 # JS Group Capstone
 
-> The leaderboard website displays scores submitted by different players. It also allows you to submit your score.
+> This is the final project of JAVASCRIPT AND NETWORKING module assign by Microverse. It is a peer-prgramming prject, which is completed by two microverse student.
+- Sediqullah Badakhsh
+- Nizamuddin Ahmadzai
 
 Below you can see how this website should look and behave:
+
+![Home Page](src/images/Home.png)
 
 ## Live Demo
 
