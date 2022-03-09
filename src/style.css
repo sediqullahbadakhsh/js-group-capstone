@@ -151,8 +151,8 @@ i:active {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow-y: initial !important;
   background-color: rgba(248, 196, 26, 0.76);
+  backdrop-filter: blur(8px);
 }
 
 .modal-content {
@@ -219,4 +219,55 @@ textarea {
 
 .pad-btm {
   padding-bottom: 15px;
+}
+
+.comments-section {
+  width: 90%;
+  margin-top: 15px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px rgb(109, 212, 25);
+}
+
+.comments-section hr {
+  border: none;
+  height: 2px;
+  width: 30%;
+  margin-bottom: 10px;
+  background-color: rgb(109, 212, 25);
+}
+
+form #name {
+  border: none;
+  background-color: rgba(248, 196, 26, 0.76);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  width: 60%;
+}
+
+form #message {
+  border: none;
+  background-color: rgba(248, 196, 26, 0.76);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  width: 60%;
+  height: 200px;
+}
+
+form .cmnt-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(109, 212, 25);
+  box-shadow: 0 3px 7px rgb(24, 51, 4);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  border: none;
 }
