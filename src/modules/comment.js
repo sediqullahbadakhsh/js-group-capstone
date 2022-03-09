@@ -7,6 +7,7 @@ const comments = (btn) => {
 
   btn.onclick = async () => {
     const data = await fetchSingleData(btn.id);
+
     const {
       strMealThumb,
       strMeal,
@@ -68,6 +69,30 @@ const comments = (btn) => {
     <td><strong>Ingredient 14:</strong> ${strIngredient14}</td>
     </tr>
     </table>
+    <hr>
+    <div class="comments-section"> 
+      <h2>Comments</h2>
+      <div id="itemCount"></div>
+      <hr>
+    <form>
+      <h2>Add your comment</h2>
+      <span id="message"></span>
+      <br/>
+      <div class="pad-btm">
+        <input type="text" name="name" id="name" placeholder="Your Name"/>
+      </div>
+      <div class="pad-btm">
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Your Message"
+          ></textarea>
+      </div>
+      <div class="pad-btm">
+         <input type="button" class="cmnt-btn" id=commentBtn${btn.id} value="submit" />
+      </div>
+    </form>
+    </div>
     `;
   };
 
