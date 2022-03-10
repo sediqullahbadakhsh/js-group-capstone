@@ -80,5 +80,11 @@ export const listItems = async () => {
     li.appendChild(btn);
     ul.appendChild(li);
   });
+
+  const countRecipes = (recipe) => recipe.length;
+  const recipe = document.querySelectorAll('.recipe-item');
+  const counter = document.querySelector('.recipes-counter');
+  counter.innerText = `Recipes (${countRecipes(recipe)})`;
+
   addLike();
 };

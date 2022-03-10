@@ -65,7 +65,7 @@ const comments = (btn) => {
       </div>
     </div>     
     <div class="comments-section"> 
-      <h2>Comments</h2>
+      <h2>Comments <span id="countC"></span></h2>
       <div id="itemC"></div>
     <form>
       <h2>Add your comment</h2>
@@ -87,6 +87,10 @@ const comments = (btn) => {
     </form>
     </div>
     `;
+    // count comments
+    const countComments = (comment) => comment.length;
+    const countCmnt = document.getElementById('countC');
+    countCmnt.textContent = `(${countComments(allComments)})`;
 
     const itemC = document.getElementById('itemC');
     itemC.innerHTML = allComments

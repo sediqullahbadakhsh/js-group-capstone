@@ -7,6 +7,7 @@ const createComment = async (e, btn) => {
   const message = document.getElementById('message');
   const alert = document.getElementById('alert');
   const itemC = document.getElementById('itemC');
+  const countCmnt = document.getElementById('countC');
 
   if (name.value === '' || message.value === '') {
     alert.textContent = 'Please fill all boxes';
@@ -42,6 +43,8 @@ const createComment = async (e, btn) => {
   message.value = '';
 
   const allComments = await getCommentsAPI(btn.id);
+  const countComments = (comment) => comment.length;
+  countCmnt.textContent = `(${countComments(allComments)})`;
 
   itemC.innerHTML = allComments
     .map((e) => {
