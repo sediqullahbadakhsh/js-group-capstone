@@ -25,13 +25,13 @@ const createComment = async (e, btn) => {
 
   const postComment = await postCommentAPI(body);
   if (postComment === 'Created') {
-    message.textContent = 'Your comment was successfull Added';
+    alert.textContent = 'Your comment was successfull Added';
     setTimeout(() => {
       alert.textContent = '';
     }, 3000);
     alert.style.color = 'green';
   } else {
-    message.textContent = 'Something went wrong';
+    alert.textContent = 'Something went wrong';
     alert.style.color = 'red';
     setTimeout(() => {
       alert.textContent = '';
