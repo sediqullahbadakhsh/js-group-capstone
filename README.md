@@ -13,8 +13,8 @@ In this project we used two API's 1- MealsDB and 2- Involvement API
 
 Below you can see how this website should look and behave:
 
-![Home Page](src/images/screen1.jpg)
-![Comment Modal](src/images/screen2.jpg)
+![Home Page](src/images/screen1.JPG)
+![Comment Modal](src/images/screen2.JPG)
 
 ## Live Demo
 
@@ -22,7 +22,7 @@ Below you can see how this website should look and behave:
 
 ## Preseting Feature Video
 
-[Features Presentation](https://drive.google.com/file/d/11CaPd226ZlX6iafPMquDxX8QT1esD9md/view?usp=sharing)
+[Features Presentation](https://drive.google.com/file/d/17ehjK_AbkVPcvAS21XVyY2QNFBPCcd2U/view?usp=sharing)
 
 ## Setup
 
