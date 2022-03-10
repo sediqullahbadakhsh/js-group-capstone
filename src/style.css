@@ -166,10 +166,12 @@ i:active {
 }
 
 .close {
+  background-color: rgba(0, 0, 0, 0);
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  z-index: 444;
 }
 
 .close:hover,
@@ -190,9 +192,14 @@ i:active {
   height: auto;
 }
 
+.instructions {
+  width: 95%;
+}
+
 .instructions h1 {
   border-bottom: solid 2px rgb(109, 212, 25);
   margin-bottom: 15px;
+  width: 90%;
 }
 
 .instructions h2 {
