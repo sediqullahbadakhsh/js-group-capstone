@@ -42,7 +42,7 @@ const addLike = () => {
 };
 
 // List Items
-const listItems = async () => {
+export const listItems = async () => {
   const ul = document.querySelector('.recipes');
   const food = await fetchData();
   food.forEach((element) => {
@@ -80,7 +80,11 @@ const listItems = async () => {
     li.appendChild(btn);
     ul.appendChild(li);
   });
+
+  const countRecipes = (recipe) => recipe.length;
+  const recipe = document.querySelectorAll('.recipe-item');
+  const counter = document.querySelector('.recipes-counter');
+  counter.innerText = `Recipes (${countRecipes(recipe)})`;
+
   addLike();
 };
-
-export default listItems;
