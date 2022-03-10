@@ -5,18 +5,18 @@ describe('Count the number of comments added', () => {
     const comments = [
       {
         item_id: '52951',
-        username: 'Jane Akpan',
-        comment: 'Hello',
+        username: 'mahmood',
+        comment: 'I like it',
       },
       {
         item_id: '52951',
-        username: 'James Okon',
+        username: 'rustam',
         comment: 'Nice Chicken',
       },
       {
-        item_id: '52951',
-        username: 'James Okon',
-        comment: 'Nice Chicken',
+        item_id: '53016',
+        username: 'ahmad',
+        comment: 'yummy',
       },
     ];
     expect(countComments(comments)).toBe(3);
