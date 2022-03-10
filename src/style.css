@@ -47,7 +47,7 @@ nav li a:hover {
 .recipes {
   padding: 20px 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 2%;
   row-gap: 40px;
   list-style-type: none;
@@ -281,4 +281,32 @@ form .cmnt-btn {
   padding: 0.5rem 1.5rem;
   text-align: center;
   border: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .recipes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .recipes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .recipes {
+    grid-template-columns: 1fr;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
 }
