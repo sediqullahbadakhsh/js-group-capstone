@@ -30,13 +30,13 @@ const addLike = () => {
   const heart = Array.from(document.querySelectorAll('.far'));
   heart.forEach((item) => {
     item.addEventListener('click', async () => {
-      if (item.style.color !== 'red') {
-        item.classList.remove('far');
-        item.classList.add('fas');
-        item.style.color = 'red';
-        await postAPI(item.id);
-        listLikes();
-      }
+      item.nextSibling.firstChild.data = `${
+        +item.nextSibling.firstChild.data.split(' ')[0] + 1
+      } likes`;
+      item.classList.remove('far');
+      item.classList.add('fas');
+      item.style.color = 'red';
+      await postAPI(item.id);
     });
   });
 };
