@@ -1,6 +1,7 @@
 import createComment from './createComment.js';
 import fetchSingleData from './fetchSingleData.js';
 import { getCommentsAPI } from './involvementAPI.js';
+import countComments from './commentCounter.js';
 
 const comments = (btn) => {
   const modal = document.getElementById('commentModal');
@@ -87,8 +88,7 @@ const comments = (btn) => {
     </form>
     </div>
     `;
-    // count comments
-    const countComments = (comment) => comment.length;
+
     const countCmnt = document.getElementById('countC');
     countCmnt.textContent = `(${countComments(allComments)})`;
 
