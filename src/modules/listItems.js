@@ -1,41 +1,40 @@
-import comments from './comment.js';
-import fetchData from './fetchAllData.js';
-import { getAPI, postAPI } from './involvementAPI.js';
+import comments from "./comment.js";
+import fetchData from "./fetchAllData.js";
+import { getAPI, postAPI } from "./involvementAPI.js";
 
-export const listLikes = () => {
-  getAPI().then((response) => {
-    const like = Array.from(document.querySelectorAll('.likes'));
-    for (let i = 0; i < like.length; i += 1) {
-      response.forEach((item) => {
-        if (item.item_id === like[i].id) {
-          if (like[i].childNodes.length <= 1) {
-            const small = document.createElement('small');
-            small.className = 'small';
-            small.textContent = `${item.likes} likes`;
-            like[i].appendChild(small);
-          } else {
-            like[i].removeChild(like[i].childNodes[1]);
-            const small = document.createElement('small');
-            small.className = 'small';
-            small.textContent = `${item.likes} likes`;
-            like[i].appendChild(small);
-          }
+export const listLikes = async () => {
+  const response = await getAPI();
+  const likes = document.querySelectorAll(".likes");
+  likes.forEach((like) => {
+    response.forEach((item) => {
+      if (item.item_id === like.id) {
+        if (like.childNodes.length <= 1) {
+          const small = document.createElement("small");
+          small.className = "small";
+          small.textContent = `${item.likes} likes`;
+          like.appendChild(small);
+        } else {
+          like.removeChild(like.childNodes[1]);
+          const small = document.createElement("small");
+          small.className = "small";
+          small.textContent = `${item.likes} likes`;
+          like.appendChild(small);
         }
-      });
-    }
+      }
+    });
   });
 };
 
 const addLike = () => {
-  const heart = Array.from(document.querySelectorAll('.far'));
-  heart.forEach((item) => {
-    item.addEventListener('click', async () => {
+  const hearts = Array.from(document.querySelectorAll(".far"));
+  hearts.forEach((item) => {
+    item.addEventListener("click", async () => {
       item.nextSibling.firstChild.data = `${
-        +item.nextSibling.firstChild.data.split(' ')[0] + 1
+        +item.nextSibling.firstChild.data.split(" ")[0] + 1
       } likes`;
-      item.classList.remove('far');
-      item.classList.add('fas');
-      item.style.color = 'red';
+      item.classList.remove("far");
+      item.classList.add("fas");
+      item.style.color = "red";
       await postAPI(item.id);
     });
   });
@@ -43,33 +42,33 @@ const addLike = () => {
 
 // List Items
 export const listItems = async () => {
-  const ul = document.querySelector('.recipes');
+  const ul = document.querySelector(".recipes");
   const food = await fetchData();
   food.forEach((element) => {
-    const li = document.createElement('li');
-    li.className = 'recipe-item';
+    const li = document.createElement("li");
+    li.className = "recipe-item";
 
-    const img = document.createElement('img');
-    img.className = 'food-img';
+    const img = document.createElement("img");
+    img.className = "food-img";
     img.src = element.strMealThumb;
-    img.alt = 'food';
+    img.alt = "food";
 
-    const p = document.createElement('p');
+    const p = document.createElement("p");
     p.textContent = element.strMeal;
-    p.className = 'recipe-name';
+    p.className = "recipe-name";
 
-    const div = document.createElement('div');
-    div.className = 'likes';
+    const div = document.createElement("div");
+    div.className = "likes";
     div.id = element.idMeal;
 
-    const heart = document.createElement('i');
-    heart.classList.add('far', 'fa-heart');
+    const heart = document.createElement("i");
+    heart.classList.add("far", "fa-heart");
     heart.id = element.idMeal;
 
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'comments';
-    btn.innerText = 'Comments';
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "comments";
+    btn.innerText = "Comments";
     btn.id = element.idMeal;
     comments(btn);
 
@@ -82,8 +81,8 @@ export const listItems = async () => {
   });
 
   const countRecipes = (recipe) => recipe.length;
-  const recipe = document.querySelectorAll('.recipe-item');
-  const counter = document.querySelector('.recipes-counter');
+  const recipe = document.querySelectorAll(".recipe-item");
+  const counter = document.querySelector(".recipes-counter");
   counter.innerText = `Recipes (${countRecipes(recipe)})`;
 
   addLike();
