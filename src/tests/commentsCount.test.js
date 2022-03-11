@@ -1,6 +1,6 @@
-import countComments from './countcomment.js';
+import countComments from '../modules/commentCounter.js';
 
-describe('Count the number of comments added', () => {
+describe('Count the number of comments', () => {
   test('Return 3 when there are three comments', () => {
     const comments = [
       {

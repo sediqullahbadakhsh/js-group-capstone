@@ -5,7 +5,3 @@ window.onload = () => {
   listItems();
   listLikes();
 };
-
-window.addEventListener('load', () => {
-  listLikes();
-});

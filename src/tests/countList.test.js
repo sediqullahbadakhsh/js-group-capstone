@@ -1,11 +1,12 @@
-import countList from './countList.js';
+import countList from '../modules/listcounter.js';
 
 describe('Count the number of recipes on the page', () => {
   test('Return 1 when if the array contains 1 item', () => {
     const recipes = [
       {
         strMeal: 'Ayam Percik',
-        strMealThumb: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
+        strMealThumb:
+          'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
         idMeal: '53050',
       },
     ];

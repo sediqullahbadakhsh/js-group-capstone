@@ -1,34 +1,34 @@
 import comments from './comment.js';
 import fetchData from './fetchAllData.js';
 import { getAPI, postAPI } from './involvementAPI.js';
+import countRecipes from './listcounter.js';
 
-export const listLikes = () => {
-  getAPI().then((response) => {
-    const like = Array.from(document.querySelectorAll('.likes'));
-    for (let i = 0; i < like.length; i += 1) {
-      response.forEach((item) => {
-        if (item.item_id === like[i].id) {
-          if (like[i].childNodes.length <= 1) {
-            const small = document.createElement('small');
-            small.className = 'small';
-            small.textContent = `${item.likes} likes`;
-            like[i].appendChild(small);
-          } else {
-            like[i].removeChild(like[i].childNodes[1]);
-            const small = document.createElement('small');
-            small.className = 'small';
-            small.textContent = `${item.likes} likes`;
-            like[i].appendChild(small);
-          }
+export const listLikes = async () => {
+  const response = await getAPI();
+  const likes = document.querySelectorAll('.likes');
+  likes.forEach((like) => {
+    response.forEach((item) => {
+      if (item.item_id === like.id) {
+        if (like.childNodes.length <= 1) {
+          const small = document.createElement('small');
+          small.className = 'small';
+          small.textContent = `${item.likes} likes`;
+          like.appendChild(small);
+        } else {
+          like.removeChild(like.childNodes[1]);
+          const small = document.createElement('small');
+          small.className = 'small';
+          small.textContent = `${item.likes} likes`;
+          like.appendChild(small);
         }
-      });
-    }
+      }
+    });
   });
 };
 
 const addLike = () => {
-  const heart = Array.from(document.querySelectorAll('.far'));
-  heart.forEach((item) => {
+  const hearts = Array.from(document.querySelectorAll('.far'));
+  hearts.forEach((item) => {
     item.addEventListener('click', async () => {
       item.nextSibling.firstChild.data = `${
         +item.nextSibling.firstChild.data.split(' ')[0] + 1
@@ -81,7 +81,7 @@ export const listItems = async () => {
     ul.appendChild(li);
   });
 
-  const countRecipes = (recipe) => recipe.length;
+  // const countRecipes = (recipe) => recipe.length;
   const recipe = document.querySelectorAll('.recipe-item');
   const counter = document.querySelector('.recipes-counter');
   counter.innerText = `Recipes (${countRecipes(recipe)})`;
