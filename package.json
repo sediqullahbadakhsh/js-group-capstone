@@ -1,0 +1,48 @@
+{
+  "name": "js-group-capstone",
+  "version": "1.0.0",
+  "description": "This is the final capstone project assigned by Microverse, to complete in  Peer Programming",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sediqullahbadakhsh/js-group-capstone.git"
+  },
+  "author": "Sediqullah Badakhsh and Nizamuddin Ahmadzai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sediqullahbadakhsh/js-group-capstone/issues"
+  },
+  "homepage": "https://github.com/sediqullahbadakhsh/js-group-capstone#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.4",
+    "file-loader": "^6.2.0",
+    "hint": "^6.1.3",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "lodash": "^4.17.21"
+  }
+}
